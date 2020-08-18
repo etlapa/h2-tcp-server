@@ -19,10 +19,6 @@ public class Config {
 	@Value("${custom.tcp.port}")
 	private int TCP_PORT;
 
-	public static void main(String[] args) {
-		SpringApplication.run(App.class, args);
-	}
-
 	@Bean(initMethod = "start", destroyMethod = "stop")
 	public Server inMemoryH2DatabaseServer() throws SQLException {
 		LOGGER.info("Starting TCP server at port: {}", TCP_PORT);
